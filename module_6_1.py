@@ -1,15 +1,13 @@
 class Animal:
     """ Родительскй класс
-    Где атрибуты alive = True(живой) и fed = False(накормленный), name - индивидуальное название каждого животного."""
+    Где атрибуты alive = True(живой) и fed = False(накормленный), name - индивидуальное название каждого животного.
+    с методом eat(self, food)  где food - это параметр, принимающий объекты классов растений"""
 
     alive = True
     fed = False
 
     def __init__(self,name):
         self.name = name
-
-class Mammal(Animal):
-    """Наследуемый класс с методом eat(self, food)  где food - это параметр, принимающий объекты классов растений"""
 
     def eat(self, food):
         self.food = (Plant)
@@ -21,17 +19,13 @@ class Mammal(Animal):
             self.alive = False
         return self.fed, self.alive
 
+class Mammal(Animal):
+    """Наследуемый класс. Родитель -Animal"""
+
+
 class Predator (Animal):
-    """Наследуемый класс с методом eat(self, food)  где food - это параметр, принимающий объекты классов растений"""
-    def eat(self, food):
-        self.food = (Plant)
-        if food.edible == True:
-            print(f'{self.name},съел {food.name}')
-            self.fed = True
-        else:
-            print(f'{self.name}, не стал есть {food.name}')
-            self.alive = False
-        return self.fed , self.alive
+    """Наследуемый класс. Родитель -Animal"""
+
 
 class Plant:
     """ Родительскй класс Растения
