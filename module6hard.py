@@ -26,12 +26,7 @@ class Figure:
     def __is_valid_color(self, r, g, b):
         """служебный, принимает параметры r, g, b, который проверяет корректность переданных значений
          перед установкой нового цвета. Корректным цвет: все значения r, g и b - целые числа в диапазоне от 0 до 255 """
-        if ((isinstance(r, int) and r <= 255 and r >= 0 and
-             isinstance(g, int) and g <= 255 and g >= 0 and
-             isinstance(b, int) and b <= 255 and b >= 0)):
-            return True
-        else:
-            return False
+       return (0<=r<=255 and 0<=g<=255 and 0<=b<=255)
 
 
     def set_color(self,r, g, b):
